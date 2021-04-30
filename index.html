@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html >
+<head>
+	<meta charset="UTF-8">
+	<title>seeing while you sleep</title>
+	<link rel="stylesheet" href="css/style.css">
+    <meta name="ROBOTS" content="INDEX,FOLLOW">
+    <meta name="description" content="seeing in the night website">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        function display_random_image() {
+        var theImages = [
+            {src: "img/books.png",}, 
+            {src: "img/boxers.png",}, 
+            {src: "img/cake.png",},
+            {src: "img/cheeseburger.png",},
+            {src: "img/duffelbags.png",},
+            {src: "img/eye.png",},
+            {src: "img/fireescape.png",},
+            {src: "img/fish.png",},
+            {src: "img/glass.png",},
+            {src: "img/landscape.png",},
+            {src: "img/lap.png",},
+            {src: "img/mattress.png",},
+            {src: "img/mouse.png",},
+            {src: "img/pizza.png",},
+            {src: "img/shoppingbags.png",},
+            {src: "img/shoppingcart.png",},
+            {src: "img/steak.png",},
+            {src: "img/teapot.png",},
+            {src: "img/telephone.png",},
+            {src: "img/underwear.png",},
+            {src: "img/window.png",},];
+   
+        var preBuffer = [];
+        for (var i = 0, j = theImages.length; i < j; i++) {
+        preBuffer[i] = new Image();
+        preBuffer[i].src = theImages[i].src;}
+   
+        function getRandomInt(min,max) {
+            imn = Math.floor(Math.random() * (max - min + 1)) + min;
+            return preBuffer[imn];}  
+  
+        var newImage = getRandomInt(0, preBuffer.length - 1);
+ 
+        var images = document.getElementsByTagName('img');
+        var l = images.length;
+        for (var p = 0; p < l; p++) {
+        images[0].parentNode.removeChild(images[0]);}
+        
+        document.body.appendChild(newImage);}
+    </script>
+
+</head>
+<body> 
+
+<div id="navbar">
+   	 <button class="button" onclick="display_random_image();">See something</button>
+    	<form id="submit_some" action="mailto:hannah.tjaden@yale.edu" method="post" enctype="text/plain">
+     	<input type="text" name="what" placeholder="What do you see?"> <input type="submit" value="&#8594;">
+	</div>
+		</form>
+</div>
+
+
+
+<!-- STICKY NAVBAR -->
+    <script> 
+        window.onscroll = function() {myFunction()};
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {navbar.classList.add("sticky")} 
+            else {navbar.classList.remove("sticky");}}
+    </script>
+
+<!-- HOURS -->
+
+<!-- <div class="closed openstatus">
+<a class="two" href="mailto:hello@immoschneider.com"></a>
+			</div>								
+					
+
+  <script>
+	  var Now = new Date();
+	  if (Now.getHours() >= 8 && Now.getHours() <= 19) $('.openstatus').toggle();
+
+    if (CurrentDay !== 7 && CurrentDay !== 0 && Open) {
+        $('.openstatus').toggle();
+    } 
+  </script> -->
+
+
+</body>
+</html>
